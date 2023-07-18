@@ -23,11 +23,21 @@ export default {
       },
     },
     fontFamily: {
-      inter: ["Inter", "sans-serif"],
+      sans: ["Inter", "sans-serif"],
     },
     extend: {
+      width: {
+        640: "40rem",
+        90: "5.625rem",
+      },
+      height: {
+        1024: "64rem",
+        200: "12.5rem",
+        52: "3.25rem",
+      },
       lineHeight: {
         140: "22.4px",
+        52: "3.25rem",
       },
       fontSize: {
         12: "0.75rem",
