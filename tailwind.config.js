@@ -11,7 +11,7 @@ export default {
       },
       base: {
         "gray-700": "#0D0D0D",
-        "gray-600": "#0D0D0D",
+        "gray-600": "#1A1A1A",
         "gray-500": "#262626",
         "gray-400": "#333333",
         "gray-300": "#808080",
@@ -30,10 +30,14 @@ export default {
         640: "40rem",
         90: "5.625rem",
       },
+      maxWidth: {
+        736: "46rem",
+      },
       height: {
         1024: "64rem",
+        824: "51.5rem",
         200: "12.5rem",
-        52: "3.25rem",
+        54: "3.375rem",
       },
       lineHeight: {
         140: "22.4px",
