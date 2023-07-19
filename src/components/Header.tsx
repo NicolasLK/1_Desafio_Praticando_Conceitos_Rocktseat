@@ -1,5 +1,5 @@
-import { PlusCircle } from "phosphor-react";
-import logoToDo from "../../public/todoLogo.svg";
+import { PlusCircle } from 'phosphor-react'
+import logoToDo from '../../public/todoLogo.svg'
 
 export function Header() {
   return (
@@ -13,7 +13,8 @@ export function Header() {
           max-w-736 
           flex 
           gap-2 
-          absolute bottom-[calc(-3.375rem/2)]
+          absolute 
+          bottom-[calc(-3.375rem/2)]
           py-0
           px-4"
         >
@@ -53,5 +54,5 @@ export function Header() {
         </form>
       </header>
     </>
-  );
+  )
 }
