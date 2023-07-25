@@ -1,7 +1,22 @@
 import { PlusCircle } from 'phosphor-react'
 import logoToDo from '../../public/todoLogo.svg'
+import { useState, FormEvent } from 'react'
 
-export function Header() {
+interface HeaderProps {
+  addNewTask: (newContent: string) => void
+}
+
+export function Header({ addNewTask }: HeaderProps) {
+  const [newContent, setNewContent] = useState('')
+
+  function handleCreateNewTask(event: FormEvent) {
+    event?.preventDefault()
+
+    addNewTask(newContent)
+
+    setNewContent('')
+  }
+
   return (
     <>
       <header className="w-screen h-200 bg-base-gray-700 flex items-center justify-center relative">
@@ -17,6 +32,7 @@ export function Header() {
           bottom-[calc(-3.375rem/2)]
           py-0
           px-4"
+          onSubmit={handleCreateNewTask}
         >
           <input
             type="text"
@@ -33,6 +49,8 @@ export function Header() {
             px-4 
             text-16
             outline-none"
+            value={newContent}
+            onChange={(e) => setNewContent(e.target.value)}
           />
           <button
             className="h-full 
