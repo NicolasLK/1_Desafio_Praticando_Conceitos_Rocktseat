@@ -9,13 +9,7 @@ export interface ITaskProps {
 }
 
 export default function App() {
-  const [tasks, setTasks] = useState<ITaskProps[]>([
-    {
-      id: 1,
-      content: 'Task de test',
-      isComplete: true,
-    },
-  ])
+  const [tasks, setTasks] = useState<ITaskProps[]>([])
 
   function addNewTask(newContent: string) {
     if (newContent === '') {
@@ -41,10 +35,27 @@ export default function App() {
     setTasks(tasks.filter((task) => task.id !== taskId))
   }
 
+  function toggleTaskCompletedById(taskId: number) {
+    const newTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          isComplete: !task.isComplete,
+        }
+      }
+      return task
+    })
+    setTasks(newTasks)
+  }
+
   return (
     <main className="flex items-center flex-col bg-base-gray-600 min-h-screen font-sans">
       <Header addNewTask={addNewTask} />
-      <Tasks tasks={tasks} onDelete={deleteTaskById} />
+      <Tasks
+        tasks={tasks}
+        onDelete={deleteTaskById}
+        onCompleted={toggleTaskCompletedById}
+      />
     </main>
   )
 }

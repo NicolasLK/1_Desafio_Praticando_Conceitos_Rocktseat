@@ -5,9 +5,10 @@ import { ITaskProps } from '../App'
 interface Props {
   tasks: ITaskProps[]
   onDelete: (taskId: number) => void
+  onCompleted: (taskId: number) => void
 }
 
-export function Tasks({ tasks, onDelete }: Props) {
+export function Tasks({ tasks, onDelete, onCompleted }: Props) {
   const taskQtd = tasks.length
   const completeTasks = tasks.filter((task) => task.isComplete).length
 
@@ -32,24 +33,33 @@ export function Tasks({ tasks, onDelete }: Props) {
         </header>
         <article className="flex flex-col gap-3">
           {tasks.map((task) => {
-            return <Task key={task.id} task={task} onDelete={onDelete} />
+            return (
+              <Task
+                key={task.id}
+                task={task}
+                onDelete={onDelete}
+                onCompleted={onCompleted}
+              />
+            )
           })}
-          {/* <section className="flex items-center justify-center flex-col gap-4">
-            <ClipboardText
-              size={56}
-              color="#808080"
-              weight="bold"
-              opacity={0.5}
-            />
-            <div>
-              <span className="text-base text-base-gray-300 font-extrabold">
-                Você ainda não tem tarefas cadastradas
-              </span>
-              <p className="text-base text-base-gray-300 font-normal">
-                Crie tarefas e organize seus itens a fazer
-              </p>
-            </div>
-          </section> */}
+          {tasks.length === 0 && (
+            <section className="flex items-center justify-center flex-col gap-4">
+              <ClipboardText
+                size={56}
+                color="#808080"
+                weight="bold"
+                opacity={0.3}
+              />
+              <div>
+                <span className="text-base text-base-gray-300 font-extrabold">
+                  Você ainda não tem tarefas cadastradas
+                </span>
+                <p className="text-base text-base-gray-300 font-normal">
+                  Crie tarefas e organize seus itens a fazer
+                </p>
+              </div>
+            </section>
+          )}
         </article>
       </section>
     </>
