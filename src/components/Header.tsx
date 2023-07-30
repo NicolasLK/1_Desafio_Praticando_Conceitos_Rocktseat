@@ -19,13 +19,13 @@ export function Header({ addNewTask }: HeaderProps) {
 
   return (
     <>
-      <header className="w-screen h-200 bg-base-gray-700 flex items-center justify-center relative">
+      <header className="w-screen h-[12.5rem] bg-base-gray-700 flex items-center justify-center relative">
         <img src={logoToDo} alt="Logo todo list" />
 
         <form
-          className="h-54 
+          className="h-[3.375rem] 
           w-full 
-          max-w-736 
+          max-w-[46rem]
           flex 
           gap-2 
           absolute 
@@ -47,8 +47,9 @@ export function Header({ addNewTask }: HeaderProps) {
             rounded-lg
             py-0
             px-4 
-            text-16
-            outline-none"
+            text-16 
+            outline-none
+            focus:outline-product-purple-dark"
             value={newContent}
             onChange={(e) => setNewContent(e.target.value)}
           />
@@ -64,7 +65,8 @@ export function Header({ addNewTask }: HeaderProps) {
           items-center
           gap-2
           font-bold
-          text-14"
+          text-14 
+          hover:bg-product-blue"
           >
             Criar
             <PlusCircle size={16} color="#F2F2F2" weight="bold" />

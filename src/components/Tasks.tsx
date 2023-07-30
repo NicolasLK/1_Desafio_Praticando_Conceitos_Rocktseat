@@ -20,13 +20,13 @@ export function Tasks({ tasks, onDelete, onCompleted }: Props) {
             <p className="text-product-blue text-sm font-bold">
               Tarefas criadas
             </p>
-            <span className="bg-base-gray-400 px-2 py-0.5 text-base-gray-200 rounded-full font-bold text-xs">
+            <span className="bg-base-gray-400 px-2 py-0.5 text-base-gray-200 rounded-full font-bold text-xs text-center">
               {taskQtd}
             </span>
           </div>
           <div className="flex items-center gap-2">
             <p className="text-product-purple text-sm font-bold">Concluídas</p>
-            <span className="bg-base-gray-400 px-2 py-0.5 text-base-gray-200 rounded-full font-bold text-xs">
+            <span className="bg-base-gray-400 px-2 py-0.5 text-base-gray-200 rounded-full font-bold text-xs text-center">
               {completeTasks} de {taskQtd}
             </span>
           </div>

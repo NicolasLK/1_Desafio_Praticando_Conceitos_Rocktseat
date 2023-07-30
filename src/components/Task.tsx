@@ -30,7 +30,7 @@ export function Task({ task, onDelete, onCompleted }: Props) {
           )}
         </>
         <button
-          className="rounded w-6 h-6 flex items-center justify-center"
+          className="rounded w-6 h-6 flex items-center justify-center hover:bg-base-gray-400"
           onClick={() => onDelete(task.id)}
         >
           <Trash size={16} color="#808080" weight="bold" />
