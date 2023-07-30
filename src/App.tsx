@@ -18,7 +18,7 @@ export default function App() {
       const idRandom = (num: number) => Math.floor(Math.random() * num)
 
       const newTask = {
-        id: idRandom(10),
+        id: idRandom(100),
         content: newContent,
         isComplete: false,
       }
@@ -49,7 +49,7 @@ export default function App() {
   }
 
   return (
-    <main className="flex items-center flex-col bg-base-gray-600 min-h-screen font-sans">
+    <main className="flex items-center flex-col bg-base-gray-600 w-screen min-h-screen font-sans">
       <Header addNewTask={addNewTask} />
       <Tasks
         tasks={tasks}
